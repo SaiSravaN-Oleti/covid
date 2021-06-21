@@ -10,21 +10,36 @@
                 margin-bottom : 10px;
                }
     body {
-            background-image: url(https://assets.weforum.org/project/image/Yq_bCETuGQ-22ffFJ7bpuwSlW43DEKfcK-01oqeBCrc.jpeg);
-            background-size: cover;
-            background-attachment: fixed;
-    }    
+	background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
+	background-size: 400% 400%;
+	animation: gradient 15s ease infinite;
+}
+
+@keyframes gradient {
+	0% {
+		background-position: 0% 50%;
+	}
+	50% {
+		background-position: 100% 50%;
+	}
+	100% {
+		background-position: 0% 50%;
+	}
+}
+
+canvas {
+    padding:0;
+    margin:0;
+}
+div.btnbg {
+    position:fixed;
+    left:0;
+    top:0;
+}
+
 </style>
 <body>
-<!-- its is for just referece
-<h1>{{selectedcountry}}</h1>
-<p>New:{{new}}</p>
-<p>Active:{{active}}</p>
-<p>Critical:{{critical}}</p>
-<p>Recovered:{{recovered}}</p>
-<p>Deaths:{{deaths}}</p>
-<p>Total:{{total}}</p>
--->
+
 <h1 style="color : white ; text-align : center"><span style="color : red">COVID-19</span> WORLDWIDE DATA</h1>
 <form style="margin-top : 50px " method="post" CLASS="d-flex justify-content-center align-items-center" action="#">
         {% csrf_token %}
@@ -65,5 +80,6 @@
     </div>
 </div>
 <h3 style="color : black ;margin-top : 150px; text-align : center ">Developed By <span style="color :white">Oleti.Saisravan</h3>
+
 </body>
 </html>
